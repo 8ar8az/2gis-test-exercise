@@ -1,0 +1,7 @@
+@import '../utils/common.scss';
+
+.root {
+  @include content-area-borders;
+  
+  outline: none;
+}

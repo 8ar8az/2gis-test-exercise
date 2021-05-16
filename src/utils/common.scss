@@ -1,0 +1,38 @@
+$border-style: 1px solid #999;
+$design-cell-size: 8px;
+$text-color: #000;
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin link($hideUnderline) {
+  @if $hideUnderline {
+    text-decoration: none;
+  }
+
+  &, &:visited, &:active, &:hover, &:focus {
+    color: $text-color;
+  }
+}
+
+@mixin content-area-borders {
+  border: $border-style;
+  border-top: none;
+}
+
+@mixin text-button {
+  @include reset-margin-padding;
+  
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}

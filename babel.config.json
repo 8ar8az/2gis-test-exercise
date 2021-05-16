@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3.12"
+      }
+    ]
+  ],
+  "sourceMaps": "inline",
+  "env": {
+    "development": {
+      "presets": [
+        ["@babel/preset-react", { "development": true }]
+      ]
+    }
+  }
+}

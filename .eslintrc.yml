@@ -1,0 +1,19 @@
+---
+root: true
+
+extends:
+  - eslint:recommended
+  - airbnb
+  - airbnb/hooks
+
+parser: "@babel/eslint-parser"
+
+parserOptions:
+  ecmaFeatures:
+    impliedStrict: true
+    jsx: true
+
+env:
+  browser: true
+  node: true
+  es2021: true

@@ -1,0 +1,27 @@
+@import '../utils/common.scss';
+
+.root {
+  display: inline;
+}
+
+.tagItem {
+  @include reset-margin-padding;
+
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $design-cell-size;
+  }
+}
+
+.tagLink {
+  @include link(true);
+
+  display: block;
+  background-color: #ddd;
+  padding: 0.5 * $design-cell-size;
+
+  &:before {
+    content: "#";
+  }
+}

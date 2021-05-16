@@ -1,0 +1,15 @@
+@import '../utils/common.scss';
+
+.root {
+  @include content-area-borders;
+  
+  padding: (4 * $design-cell-size);
+}
+
+.clearLinkWrapper {
+  margin-left: 0.5 * $design-cell-size;
+}
+
+.clearLink {
+  @include link(false);
+}

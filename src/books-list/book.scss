@@ -1,0 +1,53 @@
+@import '../utils/common.scss';
+
+.root {
+  padding: 2 * $design-cell-size;
+  box-sizing: border-box;
+
+  &:not(:last-child) {
+    border-bottom: $border-style;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-auto-rows: repeat(2, auto);
+  grid-template-areas: "author toggle"
+                       "title  toggle";
+}
+
+.author {
+  grid-area: author;
+  font-style: normal;
+}
+
+.title {
+  grid-area: title;
+  margin: (0.5 * $design-cell-size) 0 0 0;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.description {
+  @include reset-margin-padding;
+  
+  padding: (2 * $design-cell-size) 0 0 0;
+}
+
+.tags {
+  padding-top: 2 * $design-cell-size;
+}
+
+.toggleButton {
+  @include text-button;
+  
+  grid-area: toggle;
+  align-self: end;
+  font-weight: bold;
+  margin-left: 4 * $design-cell-size;
+}
+
+.toggleButtonLabel {
+  text-decoration: underline;
+}

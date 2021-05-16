@@ -1,0 +1,55 @@
+@import './utils/common.scss';
+
+.root {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 480px;
+  max-width: 1280px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: $text-color;
+  box-sizing: border-box;
+
+  ul {
+    @include reset-list;
+  }
+}
+
+.listPlaceholder {
+  @include reset-margin-padding;
+  @include content-area-borders;
+  
+  height: $design-cell-size * 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingLabel {
+  @keyframes loadingDots {
+    0% {
+      content: ".";
+    }
+
+    33% {
+      content: "..";
+    }
+
+    66% {
+      content: "...";
+    }
+  }
+
+  &:after {
+    content: ".";
+    animation: loadingDots 1s infinite;
+  }
+}
+
+.retryButton {
+  @include text-button;
+
+  text-decoration: underline;
+  margin: 0 auto;
+  display: block;
+}

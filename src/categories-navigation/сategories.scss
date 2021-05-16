@@ -1,0 +1,31 @@
+@import '../utils/common.scss';
+
+.root {
+  display: flex;
+  border: $border-style;
+  border-bottom: none;
+}
+
+.categoryItem {
+  @include reset-margin-padding;
+  
+  flex-grow: 1;
+
+  &:not(:last-child) {
+    border-right: $border-style;
+  }
+}
+
+.categoryLink {
+  @include link(true);
+
+  display: block;
+  padding: ($design-cell-size * 2) ($design-cell-size * 4);
+  text-align: center;
+  border-bottom: $border-style;
+}
+
+.categoryLinkCurrent {
+  border-bottom: none;
+  font-weight: bold;
+}
