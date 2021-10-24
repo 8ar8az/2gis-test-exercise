@@ -1,14 +1,16 @@
 {
   "presets": [
-    "@babel/preset-react",
     [
       "@babel/preset-env",
       {
         "useBuiltIns": "usage",
-        "corejs": "3.12"
+        "corejs": "3.12.1"
       }
-    ]
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
+  "babelrc": false,
   "sourceMaps": "inline",
   "env": {
     "development": {

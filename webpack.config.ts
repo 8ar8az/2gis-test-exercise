@@ -1,7 +1,9 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { Configuration } from 'webpack';
+import 'webpack-dev-server';
 
-export default (env) => ({
+export default (env: { production: boolean }): Configuration => ({
   mode: env.production ? 'production' : 'development',
   entry: path.resolve(__dirname, './src/index.jsx'),
   output: {
@@ -20,7 +22,7 @@ export default (env) => ({
     contentBase: path.resolve(__dirname, './public'),
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   target: 'web',
   plugins: [
@@ -31,7 +33,7 @@ export default (env) => ({
   module: {
     rules: [
       {
-        test: /\.jsx?$/i,
+        test: /\.(j|t)sx?$/i,
         exclude: /node_modules/i,
         use: {
           loader: 'babel-loader',

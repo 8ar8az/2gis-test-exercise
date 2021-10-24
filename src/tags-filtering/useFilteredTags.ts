@@ -3,12 +3,14 @@ import { useLocation } from 'react-router-dom';
 
 import tagsSearchParamName from './searchParamName';
 
-export default () => {
+type FilteredTags = Set<string>;
+
+export default (): FilteredTags => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const tagsString = searchParams.get(tagsSearchParamName);
 
-  const tagsFilter = useMemo(
+  const tagsFilter = useMemo<FilteredTags>(
     () => {
       if (!tagsString) {
         return new Set();

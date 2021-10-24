@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "target": "ES5",
+    "module": "CommonJS",
+    "lib": ["ESNEXT", "DOM"],
+    "jsx": "react"
+  }
+}

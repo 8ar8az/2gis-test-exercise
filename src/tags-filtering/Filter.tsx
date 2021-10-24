@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import type { Location } from 'history';
 
 import TagsList from './TagsList';
 import useFilteredTags from './useFilteredTags';
 import tagsSearchParamName from './searchParamName';
 import styles from './filter.scss';
 
-const Filter = () => {
+const Filter: FC = () => {
   const filteredTags = useFilteredTags();
 
   if (!filteredTags.size) {
     return null;
   }
 
-  const getClearFilteredTagsLocation = (location) => {
+  const getClearFilteredTagsLocation = (location: Location) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.delete(tagsSearchParamName);
 
